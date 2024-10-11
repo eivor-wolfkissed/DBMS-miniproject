@@ -41,7 +41,7 @@ app.get('/products', (req, res) => {
 });
 
 app.post('/products', (req, res) => {
-    const { fname, lname, address, account_no } = req.body;
+    const { product_id, product_name, price, expiration_date, brand } = req.body;
     const query = `INSERT INTO PRODUCT (product_id, product_name, price, expiration_date, brand) VALUES ('${product_id}', '${product_name}', '${price}', '${expiration_date}', '${brand})`;
     
     new sql.Request().query(query, (err, result) => {
